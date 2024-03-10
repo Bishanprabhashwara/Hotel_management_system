@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HOTELModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="custo">
+          <Key>
+            <PropertyRef Name="NIC" />
+          </Key>
+          <Property Name="NIC" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="cname" Type="varchar" MaxLength="30" />
+          <Property Name="phone_no" Type="varchar" MaxLength="10" />
+          <Property Name="check_in" Type="varchar" MaxLength="11" />
+          <Property Name="check_out" Type="varchar" MaxLength="11" />
+          <Property Name="photo" Type="image" />
+        </EntityType>
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NIC" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Salary" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empPhoto">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="photo" Type="image" Nullable="false" />
+          <Property Name="path" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="Item_code" />
+          </Key>
+          <Property Name="Item_code" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="item_name" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="managment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="user_name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="room_alo">
+          <Key>
+            <PropertyRef Name="NIC" />
+          </Key>
+          <Property Name="NIC" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="room_id" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rooms">
+          <Key>
+            <PropertyRef Name="room_id" />
+          </Key>
+          <Property Name="room_id" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="space" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sell">
+          <Key>
+            <PropertyRef Name="sells_code" />
+          </Key>
+          <Property Name="sells_code" Type="int" Nullable="false" />
+          <Property Name="Item_code" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="date" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="position" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tempOrder">
+          <Key>
+            <PropertyRef Name="item_name" />
+          </Key>
+          <Property Name="item_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="tot" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="HOTELModelStoreContainer">
+          <EntitySet Name="custo" EntityType="Self.custo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="empPhoto" EntityType="Self.empPhoto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="managment" EntityType="Self.managment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="room_alo" EntityType="Self.room_alo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rooms" EntityType="Self.rooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sell" EntityType="Self.sell" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tempOrder" EntityType="Self.tempOrder" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HOTELModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="empPhoto">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="HOTELEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="empPhotoes" EntityType="Self.empPhoto" />
+          <EntitySet Name="employees" EntityType="HOTELModel.employee" />
+          <EntitySet Name="Items" EntityType="HOTELModel.Item" />
+          <EntitySet Name="managments" EntityType="HOTELModel.managment" />
+          <EntitySet Name="room_alo" EntityType="HOTELModel.room_alo" />
+          <EntitySet Name="rooms" EntityType="HOTELModel.room" />
+          <EntitySet Name="staffs" EntityType="HOTELModel.staff" />
+          <EntitySet Name="custoes" EntityType="HOTELModel.custo" />
+          <EntitySet Name="sells" EntityType="HOTELModel.sell" />
+          <EntitySet Name="tempOrders" EntityType="HOTELModel.tempOrder" />
+        </EntityContainer>
+        <EntityType Name="employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NIC" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Salary" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Item_code" />
+          </Key>
+          <Property Name="Item_code" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="item_name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Qty" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="managment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="user_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="room_alo">
+          <Key>
+            <PropertyRef Name="NIC" />
+          </Key>
+          <Property Name="NIC" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="room_id" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="room">
+          <Key>
+            <PropertyRef Name="room_id" />
+          </Key>
+          <Property Name="room_id" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="space" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="staff">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="position" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="custo">
+          <Key>
+            <PropertyRef Name="NIC" />
+          </Key>
+          <Property Name="NIC" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="cname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="phone_no" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="check_in" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="check_out" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sell">
+          <Key>
+            <PropertyRef Name="sells_code" />
+          </Key>
+          <Property Name="sells_code" Type="Int32" Nullable="false" />
+          <Property Name="Item_code" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tempOrder">
+          <Key>
+            <PropertyRef Name="item_name" />
+          </Key>
+          <Property Name="item_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="tot" Type="Double" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HOTELModelStoreContainer" CdmEntityContainer="HOTELEntities">
+          <EntitySetMapping Name="empPhotoes">
+            <EntityTypeMapping TypeName="HOTELModel.empPhoto">
+              <MappingFragment StoreEntitySet="empPhoto">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="path" ColumnName="path" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="HOTELModel.employee">
+              <MappingFragment StoreEntitySet="employees">
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="HOTELModel.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+                <ScalarProperty Name="Item_code" ColumnName="Item_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="managments">
+            <EntityTypeMapping TypeName="HOTELModel.managment">
+              <MappingFragment StoreEntitySet="managment">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="room_alo">
+            <EntityTypeMapping TypeName="HOTELModel.room_alo">
+              <MappingFragment StoreEntitySet="room_alo">
+                <ScalarProperty Name="room_id" ColumnName="room_id" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rooms">
+            <EntityTypeMapping TypeName="HOTELModel.room">
+              <MappingFragment StoreEntitySet="rooms">
+                <ScalarProperty Name="space" ColumnName="space" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="room_id" ColumnName="room_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="staffs">
+            <EntityTypeMapping TypeName="HOTELModel.staff">
+              <MappingFragment StoreEntitySet="staff">
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="custoes">
+            <EntityTypeMapping TypeName="HOTELModel.custo">
+              <MappingFragment StoreEntitySet="custo">
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="check_out" ColumnName="check_out" />
+                <ScalarProperty Name="check_in" ColumnName="check_in" />
+                <ScalarProperty Name="phone_no" ColumnName="phone_no" />
+                <ScalarProperty Name="cname" ColumnName="cname" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sells">
+            <EntityTypeMapping TypeName="HOTELModel.sell">
+              <MappingFragment StoreEntitySet="sell">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="Item_code" ColumnName="Item_code" />
+                <ScalarProperty Name="sells_code" ColumnName="sells_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tempOrders">
+            <EntityTypeMapping TypeName="HOTELModel.tempOrder">
+              <MappingFragment StoreEntitySet="tempOrder">
+                <ScalarProperty Name="tot" ColumnName="tot" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

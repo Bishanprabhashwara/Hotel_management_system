@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HOTELModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="empPhoto">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="HOTELEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="empPhotoes" EntityType="Self.empPhoto" />
+    <EntitySet Name="employees" EntityType="HOTELModel.employee" />
+    <EntitySet Name="Items" EntityType="HOTELModel.Item" />
+    <EntitySet Name="managments" EntityType="HOTELModel.managment" />
+    <EntitySet Name="room_alo" EntityType="HOTELModel.room_alo" />
+    <EntitySet Name="rooms" EntityType="HOTELModel.room" />
+    <EntitySet Name="staffs" EntityType="HOTELModel.staff" />
+    <EntitySet Name="custoes" EntityType="HOTELModel.custo" />
+    <EntitySet Name="sells" EntityType="HOTELModel.sell" />
+    <EntitySet Name="tempOrders" EntityType="HOTELModel.tempOrder" />
+  </EntityContainer>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NIC" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="PhoneNo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Salary" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Item_code" />
+    </Key>
+    <Property Name="Item_code" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="item_name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="managment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="user_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="room_alo">
+    <Key>
+      <PropertyRef Name="NIC" />
+    </Key>
+    <Property Name="NIC" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="room_id" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="room">
+    <Key>
+      <PropertyRef Name="room_id" />
+    </Key>
+    <Property Name="room_id" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <Property Name="space" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="position" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="custo">
+    <Key>
+      <PropertyRef Name="NIC" />
+    </Key>
+    <Property Name="NIC" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="cname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="phone_no" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="check_in" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="check_out" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sell">
+    <Key>
+      <PropertyRef Name="sells_code" />
+    </Key>
+    <Property Name="sells_code" Type="Int32" Nullable="false" />
+    <Property Name="Item_code" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="qty" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tempOrder">
+    <Key>
+      <PropertyRef Name="item_name" />
+    </Key>
+    <Property Name="item_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <Property Name="qty" Type="Int32" Nullable="false" />
+    <Property Name="tot" Type="Double" Nullable="false" />
+  </EntityType>
+</Schema>

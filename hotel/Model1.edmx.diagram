@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="77faf61534f2452c86037d5a5ad7d3cc" Name="Diagram1">
+        <EntityTypeShape EntityType="HOTELModel.empPhoto" Width="1.5" PointX="1.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELModel.employee" Width="1.5" PointX="3.375" PointY="0.5" />
+        <EntityTypeShape EntityType="HOTELModel.Item" Width="1.5" PointX="4" PointY="3.125" />
+        <EntityTypeShape EntityType="HOTELModel.managment" Width="1.5" PointX="8" PointY="2.75" />
+        <EntityTypeShape EntityType="HOTELModel.room_alo" Width="1.5" PointX="2.25" PointY="3.125" />
+        <EntityTypeShape EntityType="HOTELModel.room" Width="1.5" PointX="5.75" PointY="0.5" />
+        <EntityTypeShape EntityType="HOTELModel.staff" Width="1.5" PointX="0.5" PointY="3" />
+        <EntityTypeShape EntityType="HOTELModel.custo" Width="1.5" PointX="6" PointY="2.5" />
+        <EntityTypeShape EntityType="HOTELModel.sell" Width="1.5" PointX="8.25" PointY="0.5" />
+        <EntityTypeShape EntityType="HOTELModel.tempOrder" Width="1.5" PointX="0.75" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

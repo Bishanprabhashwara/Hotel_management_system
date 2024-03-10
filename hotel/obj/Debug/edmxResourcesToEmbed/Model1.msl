@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HOTELModelStoreContainer" CdmEntityContainer="HOTELEntities">
+    <EntitySetMapping Name="empPhotoes">
+      <EntityTypeMapping TypeName="HOTELModel.empPhoto">
+        <MappingFragment StoreEntitySet="empPhoto">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="path" ColumnName="path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="HOTELModel.employee">
+        <MappingFragment StoreEntitySet="employees">
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="HOTELModel.Item">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="Item_code" ColumnName="Item_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="managments">
+      <EntityTypeMapping TypeName="HOTELModel.managment">
+        <MappingFragment StoreEntitySet="managment">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="room_alo">
+      <EntityTypeMapping TypeName="HOTELModel.room_alo">
+        <MappingFragment StoreEntitySet="room_alo">
+          <ScalarProperty Name="room_id" ColumnName="room_id" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rooms">
+      <EntityTypeMapping TypeName="HOTELModel.room">
+        <MappingFragment StoreEntitySet="rooms">
+          <ScalarProperty Name="space" ColumnName="space" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="room_id" ColumnName="room_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffs">
+      <EntityTypeMapping TypeName="HOTELModel.staff">
+        <MappingFragment StoreEntitySet="staff">
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="custoes">
+      <EntityTypeMapping TypeName="HOTELModel.custo">
+        <MappingFragment StoreEntitySet="custo">
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="check_out" ColumnName="check_out" />
+          <ScalarProperty Name="check_in" ColumnName="check_in" />
+          <ScalarProperty Name="phone_no" ColumnName="phone_no" />
+          <ScalarProperty Name="cname" ColumnName="cname" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sells">
+      <EntityTypeMapping TypeName="HOTELModel.sell">
+        <MappingFragment StoreEntitySet="sell">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="Item_code" ColumnName="Item_code" />
+          <ScalarProperty Name="sells_code" ColumnName="sells_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tempOrders">
+      <EntityTypeMapping TypeName="HOTELModel.tempOrder">
+        <MappingFragment StoreEntitySet="tempOrder">
+          <ScalarProperty Name="tot" ColumnName="tot" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

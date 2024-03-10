@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HOTELModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="custo">
+    <Key>
+      <PropertyRef Name="NIC" />
+    </Key>
+    <Property Name="NIC" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="cname" Type="varchar" MaxLength="30" />
+    <Property Name="phone_no" Type="varchar" MaxLength="10" />
+    <Property Name="check_in" Type="varchar" MaxLength="11" />
+    <Property Name="check_out" Type="varchar" MaxLength="11" />
+    <Property Name="photo" Type="image" />
+  </EntityType>
+  <EntityType Name="employees">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NIC" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Salary" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="empPhoto">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="photo" Type="image" Nullable="false" />
+    <Property Name="path" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="Item_code" />
+    </Key>
+    <Property Name="Item_code" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="item_name" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="managment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="room_alo">
+    <Key>
+      <PropertyRef Name="NIC" />
+    </Key>
+    <Property Name="NIC" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="room_id" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rooms">
+    <Key>
+      <PropertyRef Name="room_id" />
+    </Key>
+    <Property Name="room_id" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="space" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sell">
+    <Key>
+      <PropertyRef Name="sells_code" />
+    </Key>
+    <Property Name="sells_code" Type="int" Nullable="false" />
+    <Property Name="Item_code" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="qty" Type="int" Nullable="false" />
+    <Property Name="date" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="position" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tempOrder">
+    <Key>
+      <PropertyRef Name="item_name" />
+    </Key>
+    <Property Name="item_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="qty" Type="int" Nullable="false" />
+    <Property Name="tot" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HOTELModelStoreContainer">
+    <EntitySet Name="custo" EntityType="Self.custo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="empPhoto" EntityType="Self.empPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="managment" EntityType="Self.managment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="room_alo" EntityType="Self.room_alo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rooms" EntityType="Self.rooms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sell" EntityType="Self.sell" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staff" EntityType="Self.staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tempOrder" EntityType="Self.tempOrder" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
